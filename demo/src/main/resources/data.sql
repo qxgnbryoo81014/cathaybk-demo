@@ -2,7 +2,7 @@ DROP TABLE currency;
 
 -- 建立currency資料表
 CREATE TABLE currency (
-    currency_code CHAR(3) PRIMARY KEY,
+    currency_code CHAR(4) PRIMARY KEY,
     currency_name VARCHAR(50)
 );
 

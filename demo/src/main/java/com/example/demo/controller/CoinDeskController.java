@@ -58,7 +58,7 @@ public class CoinDeskController {
 		bitcoinDTO = objectMapper.readValue(response.getBody(), BitcoinDTO.class);
 		for(Map.Entry<String, BpiData> entry : bitcoinDTO.getBpiData().entrySet()) {
 			/** 取得幣別中文名稱 */
-			entry.getValue().setCodeName(currencyMap.get(entry.getKey()));
+			entry.getValue().setCodeName(currencyMap.containsKey(entry.getKey()) ? currencyMap.get(entry.getKey()) : "查無對應幣別");
 		}
 		apiResponse = new ApiResponse(bitcoinDTO);
 		apiResponse.setStatusCode(response.getStatusCodeValue());

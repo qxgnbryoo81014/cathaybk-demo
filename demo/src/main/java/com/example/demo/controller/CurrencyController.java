@@ -58,8 +58,7 @@ public class CurrencyController {
     @PutMapping
     public ResponseEntity<ApiResponse> updateCurrency(@RequestBody Currency updatedCurrency) {
     	try {
-    		currencyService.update(updatedCurrency);
-    		return new ResponseEntity<>(new ApiResponse(updatedCurrency), HttpStatus.OK);
+    		return new ResponseEntity<>(new ApiResponse(currencyService.update(updatedCurrency)), HttpStatus.OK);
 		} catch (EntityNotFoundException e) {
 			return new ResponseEntity<>(new ApiResponse(HttpStatus.NOT_FOUND .value(), e.getMessage(), null), HttpStatus.NOT_FOUND );
 		}

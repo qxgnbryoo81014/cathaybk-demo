@@ -19,6 +19,5 @@ public class BpiData {
 	String code;
 	@JsonProperty("rate_float")
 	float rateFloat;
-	
 	String codeName;
 }
